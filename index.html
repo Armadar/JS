@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <script>
+        //fetch('http://www.raydelto.org/json.php')
+        fetch('https://davidwalsh.name/demo/arsenal.json')
+        .then((res) => {
+            return res.json();
+        }).then((res) => {
+
+            /*
+            document.getElementById('nombre').value = res.name;
+            document.getElementById('apellido').value = res.lastName;
+            */
+            res.forEach((valor) => {
+                //console.log(valor.children[0].children.length)
+                valor.children[0].children.forEach((child) => {
+                    console.log(child.name);
+                });
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div id="informacion">
+        <input type="text" id="nombre" value="Loading...">
+        <input type="text" id="apellido" value="Loading...">
+    </div>
+</body>
+
+</html>
